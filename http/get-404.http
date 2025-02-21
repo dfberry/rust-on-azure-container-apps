@@ -1,0 +1,1 @@
+GET {{$dotenv %BACKEND_URL}}/DOES-NOT-EXIST HTTP/1.1

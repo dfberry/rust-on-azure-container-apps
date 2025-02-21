@@ -1,0 +1,21 @@
+# Exclude environment and configuration files
+.env
+*.env
+
+# Exclude the target directory that contains compiled binaries and intermediate files
+target/
+
+# Exclude Cargo.lock if you want to rebuild dependencies inside the container or
+# if you manage it differently (remove this line if you want to copy Cargo.lock)
+#Cargo.lock
+
+# Exclude version control systems
+.git/
+.gitignore
+
+# Exclude IDE configuration files
+.vscode/
+.idea/
+
+# Exclude OS-specific files
+.DS_Store
