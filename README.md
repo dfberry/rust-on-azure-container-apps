@@ -1,4 +1,4 @@
-# Deploy Rust app to Azure Container Apps
+# Deploy Rust to Azure Container Apps
 
 This application is a simple Rust application, with steps to deploy to Azure Container Apps. 
 
