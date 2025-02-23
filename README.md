@@ -2,6 +2,13 @@
 
 This application is a simple Rust application, with steps to deploy to Azure Container Apps. 
 
+The Rust app uses the Axum web server. The server has a root route returning HTML and a `/api/users` route returning JSON data. 
+
+The app has 2 _secrets_ to demonstrate how to use those secrets in the Axum app and in the deployment process. 
+
+* PORT=3000
+* MY_SECRET=1234
+
 ## Deploy
 
 1. Copy `sample.env` to `.env` file. Fill out with port and secret. Secret is just an example of any secret.
@@ -12,6 +19,14 @@ This application is a simple Rust application, with steps to deploy to Azure Con
 1. In terminal at root of project, run `bash ./scripts/create-github-azure-credentials.sh`. This creates the secrets you need to deploy from the GitHub workflow file, `./.azure/workflows/build-and-deploy.yaml`, and adds them to your GitHub repo. 
 1. Go to the GitHub repository and trigger the workflow manually to deploy to Azure Container Apps.
 1. In terminal at root of project, run `bash ./scripts/get-url.sh`. This displays the URL to access your app. 
+1. Paste the URl in a browser to see the app. 
+
+  ![Screenshot of app in browser](./docs/media/app-in-browser.png)
+
+1. Add `/api/users` to the the JSON results
+
+  ![Screenshot of api results in browser](./docs/media/api-in-browser.png)
+
 
 ## Azure resources
 
