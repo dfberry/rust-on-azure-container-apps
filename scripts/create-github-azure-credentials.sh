@@ -2,6 +2,7 @@
 
 ## Prerequisites
 ## az login --use-device-code
+## azd login
 ## gh auth login
 ##
 

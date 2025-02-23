@@ -18,6 +18,7 @@ The app has 2 _secrets_ to demonstrate how to use those secrets in the Axum app 
 1. In terminal at root of project, run `bash ./scripts/azd-provision-with-environment.sh`. This creates the Azure resources and copies a few key environment variables from the privisioning process into the root `.env`. 
 1. In terminal at root of project, run `bash ./scripts/create-github-azure-credentials.sh`. This creates the secrets you need to deploy from the GitHub workflow file, `./.azure/workflows/build-and-deploy.yaml`, and adds them to your GitHub repo. 
 1. Go to the GitHub repository and trigger the workflow manually to deploy to Azure Container Apps.
+1. In **a new terminal** at root of project, run `bash ./scripts/stream-logs.sh` to see the Rust Axum server logs as requests are made. 
 1. In terminal at root of project, run `bash ./scripts/get-url.sh`. This displays the URL to access your app. 
 1. Paste the URl in a browser to see the app. 
 
@@ -38,6 +39,16 @@ This Azure resources used in this project include:
 * Managed Identity
 * Shared dashboard
 * Application Insights
+
+## CLIs
+
+This repo uses several CLIs to simplify the provisioning and deployment process to Azure. This CLIs can be used with any programming language, including Rust: 
+
+* Azure CLI: the Azure CLI has a large scripting surface to interact with Azure resources, including creation, configuration, and streaming logs.
+* Azure Developer CLI: the Azure Developer CLI supports provisioning and deployment for .NET, Java, Python, and JavaScript. This project uses the provisioning functionality, which is language agnostic, to create and configure the Azure resources using Bicep templates. 
+* GitHub CLI: the GitHub CLI is used to configure the repo deployment secrets. 
+
+This functionality is wrapped in bash scripts in the `./scripts` directory. 
 
 ## Using VS Code REST Client
 
