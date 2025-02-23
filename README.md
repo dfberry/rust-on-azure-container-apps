@@ -1,22 +1,8 @@
 # Deploy Rust app to Azure Container Apps
 
-## Don't change anything yet
+This application is a simple Rust application, with steps to deploy to Azure Container Apps. 
 
-Follow the steps in the next section. If you can't complete all the steps successfully, log an issue with the following:
-
-* You should only need to copy `sample.env` files into `.env` files. 
-* What host operating system did you use such as Windows, Mac, or Linux. Include version and flavor -- as much information as possible.
-* What type of Azure subscription you are deploying to. 
-* Which step didn't complete and what error you got in the process.
-* What debug/fix steps you took. 
-* If you made any changes to one of the following directories, explain why you needed to make that change to try out the sample in order to deploy it:
-  * ./src
-  * ./infra
-  * ./devcontainer
-  * ./github/workflows
-  * ./http
-
-## azd up
+## Deploy
 
 1. Copy `sample.env` to `.env` file. Fill out with port and secret. Secret is just an example of any secret.
 1. In terminal at root of project, run `az login` to sign into Azure CLI.
@@ -27,6 +13,16 @@ Follow the steps in the next section. If you can't complete all the steps succes
 1. Go to the GitHub repository and trigger the workflow manually to deploy to Azure Container Apps.
 1. In terminal at root of project, run `bash ./scripts/get-url.sh`. This displays the URL to access your app. 
 
+## Azure resources
+
+This Azure resources used in this project include:
+
+* Azure Container registry
+* Azure Container Apps Environment
+* Azure Container App
+* Managed Identity
+* Shared dashboard
+* Application Insights
 
 ## Using VS Code REST Client
 
@@ -51,3 +47,20 @@ When you are ready to remove your resources from Azure, use the following Azure 
 ```bash
 azd down --purge
 ```
+
+## Troubleshooting
+
+If you can't complete all of the deploy steps successfully, [log an issue](https://github.com/dfberry/rust-on-azure-container-apps/issues) with the following:
+
+* You should only need to copy `sample.env` files into `.env` files. 
+* What host operating system did you use such as Windows, Mac, or Linux. Include version and flavor -- as much information as possible.
+* What type of Azure subscription you are deploying to. 
+* Which step didn't complete and what error you got in the process.
+* What debug/fix steps you took. 
+* If you made any changes to one of the following directories, explain why you needed to make that change to try out the sample in order to deploy it:
+  * ./src
+  * ./infra
+  * ./devcontainer
+  * ./github/workflows
+  * ./http
+* If you swapped out another Rust application in order to use the provisioning and deployment, what did you swap out? Can you link to a public repo of that framework or your source code? 
